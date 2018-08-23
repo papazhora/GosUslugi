@@ -2,16 +2,20 @@ package io.emalina.studentorder.domain;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person {
 
-    protected String surName;
-    protected String givenName;
+    private String surName;
+    private String givenName;
     private String patronymic;
     private LocalDate dateOfBirth;
     private Address address;
 
-    public Person() {
-        System.out.println("Person is created");
+    public Person(String surName, String givenName, String patronymic,
+                  LocalDate dateOfBirth) {
+        this.surName = surName;
+        this.givenName = givenName;
+        this.patronymic = patronymic;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getPersonString() {

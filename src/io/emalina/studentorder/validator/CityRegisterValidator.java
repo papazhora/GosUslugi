@@ -10,12 +10,15 @@ public class CityRegisterValidator {
     public String login;
     public String password;
 
+    private RealCityRegisterChecker personChecker;
+
+    public CityRegisterValidator() {
+        personChecker = new RealCityRegisterChecker();
+    }
+
     public AnswerCityRegister checkCityRegister(StudentOrder so) {
 
         AnswerCityRegister ans = new AnswerCityRegister();
-        ans.sucsses = true;
-        System.out.println("City register is running: "
-                + hostName + ", " + login + ", " + password + ", " + ans.sucsses);
         return ans;
     }
 }
